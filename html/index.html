@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>都道府県別の新型コロナウィルス感染者数推移</title>
+        <script src="./chart.js"></script>
+        <link rel="stylesheet" href="./main.css">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div id="main_container">
+            <h1>都道府県別の新型コロナウィルス感染者数推移</h1>
+            <p id='abstract'></p>
+            <div class="chart_container">
+                <canvas id="relative_date"></canvas>
+                累計感染者数が<input type="number" name="threshold" id="threshold" min="1">人以上になった日を0日目としたときの感染者数の推移
+            </div>
+            <div class="chart_container">
+                <canvas id="original_date"></canvas>
+                第1例目からの推移
+            </div>
+
+            <p>
+                図表作成: <a href="https://twitter.com/kurain">@kurain</a>
+            </p>
+            <p>
+                参照データ: <a href="https://toyokeizai.net/sp/visual/tko/covid19/">新型コロナウイルス国内感染の状況</a>
+            </p>
+            <p>
+                このサイトのソースコード: <a href="https://github.com/kurain/covid19">https://github.com/kurain/covid19</a>
+            </p>
+        </div>
+        <script src="./main.js" charset="utf-8"></script>
+    </body>
+</html>

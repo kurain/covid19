@@ -1,0 +1,12 @@
+div.chart_container {
+    margin: 10%;
+}
+
+#main_container {
+    text-align: center;
+}
+
+#threshold {
+    width: 3em;
+    margin: 0.5em;
+}
