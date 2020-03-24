@@ -73,5 +73,13 @@ def tuple2css(t):
 res['colors'] = {p: tuple2css(tableau20[i%20]) for i, p in enumerate(prefectures)}
 res['last_update'] = datetime.datetime.now().isoformat()
 
-with open(Path(__file__).parent / '../docs/count_by_location.json', 'w') as f:
-    json.dump(res, f)
+
+output_path = Path(__file__).parent / '../docs/count_by_location.json'
+
+with open(output_path) as f:
+    current = json.load(f)
+
+last_date = datetime.datetime.strptime(current['date'][-1],'%Y-%m-%dT%H:%M:%S')
+if datetime.datetime.strptime(res['date'][-1],'%Y-%m-%dT%H:%M:%S') > last_date:
+    with open(output_path, 'w') as f:
+        json.dump(res, f)
